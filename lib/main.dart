@@ -6,6 +6,7 @@ void main() {
   runApp(
     GetMaterialApp(
       title: 'Flutter Google map Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),

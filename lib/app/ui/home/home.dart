@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(top: 32),
+            padding: const EdgeInsets.only(top: 40),
             child: Column(
               children: <Widget>[
                 Obx(() {
@@ -27,14 +27,13 @@ class Home extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: "Search",
                         contentPadding: EdgeInsets.only(left: 20),
-                        suffixIcon:
-                            controller.isFocused.value
-                                ? IconButton(
-                                  padding: EdgeInsets.zero,
-                                  icon: Icon(Icons.close),
-                                  onPressed: () => log("close"),
-                                )
-                                : SizedBox(),
+                        suffixIcon: controller.isFocused.value
+                            ? IconButton(
+                                padding: EdgeInsets.zero,
+                                icon: Icon(Icons.close),
+                                onPressed: () => log("close"),
+                              )
+                            : SizedBox(),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(32),
                         ),
@@ -45,7 +44,6 @@ class Home extends StatelessWidget {
                     ),
                   );
                 }),
-
                 Obx(() {
                   return Text(
                     controller.counter.toString(),

@@ -9,7 +9,7 @@ void main() {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:  Home(),
+      home: Home(),
     ),
   );
 }

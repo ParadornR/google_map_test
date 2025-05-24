@@ -21,10 +21,10 @@ class HomeController extends GetxController {
     try {
       Position position = await getCurrentLocation();
       log(
-        'ตำแหน่งของคุณ: latitude: ${position.latitude}, longitude: ${position.longitude}',
+        '[ตำแหน่งของคุณ]: latitude: ${position.latitude}, longitude: ${position.longitude}',
       );
     } catch (e) {
-      log('เกิดข้อผิดพลาด: $e');
+      log('[เกิดข้อผิดพลาด]: $e');
     }
   }
 

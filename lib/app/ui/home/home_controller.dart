@@ -13,6 +13,9 @@ class HomeController extends GetxController {
   var latitude = 0.0.obs;
   var longitude = 0.0.obs;
 
+  var showBottomSheet = false.obs;
+  var bottomSheetHeight = 0.0.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -55,7 +58,8 @@ class HomeController extends GetxController {
 
     if (permission == LocationPermission.deniedForever) {
       return Future.error(
-          'Location permissions are permanently denied, we cannot request permissions.');
+        'Location permissions are permanently denied, we cannot request permissions.',
+      );
     }
 
     LocationSettings locationSettings = LocationSettings(
@@ -74,9 +78,23 @@ class HomeController extends GetxController {
   }
 
   void moveCamera() {
+    // ignore: unnecessary_null_comparison
     if (mapController != null) {
       final pos = LatLng(latitude.value, longitude.value);
       mapController.animateCamera(CameraUpdate.newLatLng(pos));
     }
+  }
+
+  void onMapCreated(GoogleMapController controllerOnMap) {
+    mapController = controllerOnMap;
+  }
+
+  void dragBottomSheet(DragUpdateDetails details) {
+    // เพิ่มหรือลดความสูงแบบตามนิ้วลาก
+    bottomSheetHeight.value -= details.delta.dy;
+
+    
+    // จำกัดความสูงให้อยู่ในช่วงที่เหมาะสม
+    log(bottomSheetHeight.value.toString());
   }
 }

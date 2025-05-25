@@ -12,8 +12,8 @@
 
 1. **โคลนโปรเจกต์ลงเครื่อง**
 ```bash
-git clone https://github.com/your-username/map-ui-test.git
-cd map-ui-test 
+git clone https://github.com/ParadornR/google_map_test.git
+cd google_map_test
 ```
 
 2. **ติดตั้ง dependencies**
